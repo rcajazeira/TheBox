@@ -1,0 +1,22 @@
+/* 1. Reset Básico e Definições Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Melhora o controle de padding e border */
+}
+
+body {
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Cor de fundo suave para o corpo */
+  color: #333;
+}
+
+a {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: inherit; /* Herda a cor do texto do elemento pai */
+}
+
+ul {
+  list-style: none; /* Remove marcadores de lista */
+}
