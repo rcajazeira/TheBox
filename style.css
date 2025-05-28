@@ -20,3 +20,148 @@ a {
 ul {
   list-style: none; /* Remove marcadores de lista */
 }
+
+/* 2. Estilos do Header e Navegação */
+.navegacao {
+  background-color: white; /* Cor de fundo escura para o header */
+  color: black;
+  padding: 10px 0; /* Espaçamento interno vertical */
+  width: 100%;
+  position: fixed; /* Para o header ficar fixo no topo (opcional) */
+  top: 0;
+  left: 0;
+ /*  z-index: 1000; */ /* Para garantir que fique acima de outros conteúdos */
+ 
+}
+
+nav {
+  display: flex; /* Ativa o Flexbox */
+  justify-content: space-between; /* H1 à esquerda, UL à direita */
+  align-items: center; /* Alinha verticalmente ao centro */
+  max-width: 1200px; /* Largura máxima do conteúdo da navegação */
+  margin: 0 auto; /* Centraliza a navegação na página */
+  padding: 0 20px; /* Espaçamento lateral dentro da nav */
+}
+
+/* 3. Estilo do H1 (Logo) */
+nav h1 {
+  margin: 0; /* Remove margem padrão do h1 */
+}
+
+.logo-img {
+  /* Opção de controle de tamanho da imagem */
+  max-width: 60rem; /* Define uma largura máxima, ajuste conforme necessário */
+  /* Se quiser um tamanho fixo, use width: 150px; e height: auto; */
+  height: 30rem;    /* Mantém a proporção da imagem */
+  display: block; /* Remove espaço extra abaixo da imagem se houver */
+ 
+}
+
+/* 4. Estilo da Lista de Navegação (UL) e Itens (LI) */
+nav ul {
+  display: flex; /* Itens da lista em linha */
+  align-items: center; /* Alinha itens verticalmente se tiverem alturas diferentes */
+  background-color: white; /* Fundo branco para a UL */
+  padding: 8px 15px; /* Espaçamento interno na UL */
+  border-radius: 5px; /* Bordas arredondadas para a UL */
+}
+
+nav ul li {
+  margin-left: 20px; /* Espaçamento entre os itens da lista */
+}
+nav ul li:first-child {
+  margin-left: 0; /* Remove margem do primeiro item */
+}
+
+nav ul li a {
+  color: #333; /* Cor dos links dentro da UL */
+  padding: 5px 10px; /* Espaçamento clicável nos links */
+  display: block; /* Permite aplicar padding corretamente */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transição suave para hover */
+}
+
+nav ul li a:hover {
+  color: #007bff; /* Cor do link ao passar o mouse */
+}
+
+/* 5. Estilo do Último Item da Navegação (usando o span) */
+.last-nav-item {
+  background-color: #007bff; /* Cor de fundo para o último item (ex: azul) */
+  color: white; /* Cor do texto do último item */
+  padding: 8px 15px; /* Espaçamento interno para parecer um botão */
+  border-radius: 4px; /* Bordas arredondadas */
+  display: inline-block; /* Para que o padding e background funcionem bem no span */
+  transition: background-color 0.3s ease;
+}
+
+.last-nav-item:hover {
+  background-color: #0056b3; /* Cor mais escura no hover */
+}
+
+/* 6. Adaptação para Mobile (Responsividade) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* H1 e UL um abaixo do outro */
+    align-items: center; /* Centraliza os itens no modo coluna */
+    padding: 10px 20px; /* Ajusta o padding da nav no mobile */
+  }
+
+  nav h1 {
+    margin-bottom: 15px; /* Espaço entre o logo e a lista de links */
+  }
+
+  /* Para o logo no mobile, se quiser um tamanho específico */
+  .logo-img {
+     max-width: 120px; /* Um pouco menor no mobile, por exemplo */
+  }
+
+  nav ul {
+    flex-direction: column; /* Itens da lista um abaixo do outro */
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 10px 0; /* Ajusta padding da UL */
+    background-color: transparent; /* Remove o fundo branco da UL, pois cada item terá seu estilo */
+  }
+
+  nav ul li {
+    margin-left: 0; /* Remove margem lateral, pois estarão em coluna */
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+    width: 100%; /* Faz cada item da lista ocupar a largura toda */
+    text-align: center; /* Centraliza o texto dos links */
+  }
+  nav ul li:last-child {
+    margin-bottom: 0; /* Remove margem inferior do último item */
+  }
+
+  nav ul li a {
+    padding: 10px; /* Aumenta área de toque */
+    background-color: white; /* Fundo branco para cada link individualmente no mobile */
+    color: #333;
+    border-radius: 4px; /* Bordas arredondadas para cada link */
+    display: block; /* Faz o link ocupar toda a largura do LI */
+  }
+  
+  /* O último item mantém seu estilo, mas ajustamos para o contexto de coluna */
+  .last-nav-item {
+    display: block; /* Ocupa toda a largura do LI */
+    padding: 10px 15px; /* Ajuste de padding se necessário */
+    /* A cor de fundo e texto já estão definidas, mas pode ajustar se quiser */
+  }
+
+  /* Se o header é fixo, precisa adicionar um margin-top ao conteúdo principal */
+  main {
+    margin-top: 150px; /* Altura aproximada do header no mobile, ajuste conforme o seu header */
+  }
+}
+
+/* Ajuste fino para telas muito pequenas, se necessário */
+@media (max-width: 480px) {
+  .logo-img {
+    max-width: 100px;
+  }
+  nav ul li a, .last-nav-item {
+    font-size: 0.9em; /* Reduz um pouco a fonte dos links */
+  }
+  main {
+    margin-top: 140px; /* Reajuste se necessário */
+  }
+}
