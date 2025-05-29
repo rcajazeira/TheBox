@@ -17,7 +17,6 @@
             alt="Logo The BOX"
           />
         </h1>
-        <!-- UL (lista de links) primeiro, para ficar à esquerda -->
         <ul class="menu-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">About Us</a></li>
@@ -27,12 +26,10 @@
             <a href="#"><span class="contato-destaque">Contact Us</span></a>
           </li>
         </ul>
-
-        <!-- H1 (logo) depois, para ficar à direita -->
       </nav>
     </header>
 
-    <main style="padding: 45px; text-align: center; margin-top: 100px">
+    <main class="main-content">
       <section class="hero">
         <img
           class="full-screen-image"
@@ -40,21 +37,23 @@
           alt="Modern building"
         />
         <div class="hero-content">
-          <h1>Building things<br />is our mission.</h1>
+          <h1 class="main-heading">Building things<br />is our mission.</h1>
+          </div>
 
-          <aside class="feature-project">
+          <aside class="feature-project-box">
             <h2>Feature Projects</h2>
             <p>The National University of<br />Architecture</p>
 
             <nav class="project-nav">
               <ul>
-                <li><a href="#">Back</a></li>
-                <li><a href="#">Next</a></li>
+                <li><a href="#"><span class="arrow">&#8592;</span> Back</a></li>
+                <li><a href="#">Next <span class="arrow">&#8594;</span></a></li>
               </ul>
             </nav>
           </aside>
-        </div>
+        
       </section>
     </main>
   </body>
 </html>
+
