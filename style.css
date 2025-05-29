@@ -179,3 +179,17 @@ nav .menu-links li a:hover {
     margin-top: 170px; /* Reajuste se necessário */
   }
 }
+
+/* Estilo da seção principal tipo 'hero' */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+}
