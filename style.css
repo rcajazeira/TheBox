@@ -31,7 +31,7 @@ ul {
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
 }
 
 nav {
@@ -51,7 +51,7 @@ nav h1 {
 
 .logo-img {
   /* Ajuste para a imagem do logo (larga e baixa) */
-  height: 40px;   /* Defina a altura desejada */
+  height: 120px;   /* Defina a altura desejada */
   width: auto;    /* Largura se ajusta para manter a proporção */
   max-width: 100%; /* Garante que não ultrapasse o container, especialmente no mobile */
   display: block;
@@ -71,7 +71,8 @@ nav .menu-links {
 }
 
 nav .menu-links li {
-  margin-right: 20px; /* Espaçamento à direita de cada item (exceto o último) */
+  margin-right: 30px; /* Espaçamento à direita de cada item (exceto o último) */
+  font-weight: bold;
 }
 
 nav .menu-links li:last-child {
