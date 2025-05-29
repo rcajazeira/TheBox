@@ -193,3 +193,9 @@ nav .menu-links li a:hover {
   text-align: center;
   align-items: center;
 }
+
+.full-screen-image {
+  width: 100vw;
+  display: block;
+  object-fit: cover;
+}
