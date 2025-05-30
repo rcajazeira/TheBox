@@ -247,6 +247,7 @@ nav .menu-links li a:hover {
   justify-content: flex-end;
   align-items: flex-end;
   box-sizing: border-box;
+  position: absolute;
 }
 
 .feature-project-box h2 {
