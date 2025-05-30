@@ -313,6 +313,5 @@ nav .menu-links li a:hover {
   flex-direction: row;
   text-align: center;
   padding: 20px;
-  justify-content: space-between;
-  gap: 4rem;
+  gap: 1rem;
 }
