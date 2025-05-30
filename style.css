@@ -315,3 +315,9 @@ nav .menu-links li a:hover {
   padding: 20px;
   gap: 1rem;
 }
+
+.material-symbols-outlined {
+color: chocolate;
+font-size: 2rem;
+
+}
