@@ -236,18 +236,21 @@ nav .menu-links li a:hover {
   text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
 }
 
+/* Ajustes para .feature-project-box */
 .feature-project-box {
-  background-color: rgba(255, 255, 255, 0.95);
+  position: absolute; /* Adicionado para posicionamento relativo ao .hero */
+  bottom: 20px;       /* Posiciona na parte inferior com uma margem de 20px */
+  right: 20px;        /* Posiciona na direita com uma margem de 20px */
+  background-color: rgba(0, 55, 100, 0.9); /* Cor azul escura translúcida como na imagem de exemplo */
   padding: 25px;
-  border: 2px solid #007bff;
-  border-radius: 10px;
-  color: #333;
-  width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  justify-content: flex-end;
-  align-items: flex-end;
+  /* border: 2px solid #007bff; Removida a borda azul clara, pois o exemplo não parece ter */
+  border-radius: 0px; /* Removido o arredondamento para um visual mais reto como no exemplo */
+  color: #fff; /* Cor do texto alterada para branco para contrastar com o fundo azul */
+  width: 300px; /* Largura mantida, ajuste se necessário */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  z-index: 2; /* Garante que fique sobre a imagem */
   box-sizing: border-box;
-  position: absolute;
+  /* Removido justify-content e align-items pois não são mais relevantes com position:absolute */
 }
 
 .feature-project-box h2 {
