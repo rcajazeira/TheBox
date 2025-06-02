@@ -304,6 +304,7 @@ nav .menu-links li a:hover {
   justify-content: center;
   display: flex; 
   
+  
 }
 
 .reputation-content {
@@ -313,11 +314,19 @@ nav .menu-links li a:hover {
   flex-direction: row;
   text-align: center;
   padding: 20px;
-  gap: 1rem;
+  gap: 24rem;
+  
+  & p{
+    font-size: 1.2rem;
+    color: #0c0000;
+    font-weight: bold;
+    margin-top: 4rem;
+  }
 }
 
 .material-symbols-outlined {
 color: chocolate;
 font-size: 2rem;
+margin-top: 4rem;
 
 }
