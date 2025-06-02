@@ -410,19 +410,21 @@ nav .menu-links li a:hover {
 
 /* About Card Component */
 .about-card {
+    background-color: white;
     display: flex; /* Enables flexbox layout for side-by-side items */
     align-items: center; /* Vertically aligns the image and text box if their heights differ */
-    max-width: 850px; /* Adjust to control the overall width of the component */
-    width: 90%;       /* Responsive width */
-    margin: auto;     /* Centers the card if its parent isn't a flex container */
+    /* max-width: 100%; */ /* Adjust to control the overall width of the component */
+    /* width: 100%;  */      /* Responsive width */
+    /* margin: auto; */     /* Centers the card if its parent isn't a flex container */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the whole card */
-    overflow: hidden; /* Optional: Ensures nothing spills out if calculations are slightly off */
+    /* overflow: hidden; */ /* Optional: Ensures nothing spills out if calculations are slightly off */
 }
 
 .about-card__image-wrapper {
-    flex: 0 0 65%; /* Image area takes up 65% of the card's width and doesn't grow/shrink */
+    flex: 0 0 50%; /* Image area takes up 65% of the card's width and doesn't grow/shrink */
                    /* This div's boundary defines where the gray photo area visually ends before overlap */
     line-height: 0; /* Fixes potential small gap below image */
+    position: relative; /* Allows for absolute positioning of the image inside */
 }
 
 .about-card__image-wrapper img {
@@ -433,14 +435,14 @@ nav .menu-links li a:hover {
 }
 
 .about-card__text-content {
-    flex: 0 0 45%; /* Text box aims for 45% of card's width. (65% + 45% = 110%) */
+    flex: 0 0 30%; /* Text box aims for 45% of card's width. (65% + 45% = 110%) */
     background-color: #2A43A5; /* Dark blue from your image */
     color: white;
     padding: 30px 35px; /* Inner spacing: top/bottom, left/right */
     box-sizing: border-box; /* Padding and border are included in the element's total width and height */
     
     /* THE OVERLAP MAGIC: */
-    margin-left: -10%; /* Pulls the text box left by 10% of the .about-card's width, creating the overlap */
+    margin-left: 10%; /* Pulls the text box left by 10% of the .about-card's width, creating the overlap */
                        /* 65% (image) + 45% (text) - 10% (overlap) = 100% (total visual width) */
                        /* Visible image part will be 65% - 10% = 55% */
                        /* Visible text part will be 45% */
@@ -450,6 +452,7 @@ nav .menu-links li a:hover {
     display: flex; /* To allow vertical centering of content inside if needed */
     flex-direction: column;
     justify-content: center; /* Vertically centers content within the blue box */
+    
 }
 
 .about-card__text-content h2 {
