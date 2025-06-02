@@ -299,46 +299,113 @@ nav .menu-links li a:hover {
 .nossaReputacao {
   font-size: 2rem;
   font-weight: bold;
-  text-align: center; 
+  text-align: center;
   margin-top: 6rem;
-  justify-content: center;
-  display: flex; 
-  
-  
+  /* justify-content: center; display: flex; - Não é necessário aqui, text-align: center é suficiente para um H2 */
 }
 
 .reputation-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  justify-content: center; /* Centraliza os itens na linha (desktop) ou coluna (mobile) */
+  align-items: center;   /* Centraliza os itens no eixo transversal */
+  flex-direction: row;   /* Padrão para desktop */
   text-align: center;
   padding: 20px;
-  gap: 24rem;
-  
-  & p{
-    font-size: 1.2rem;
-    color: #0c0000;
-    font-weight: bold;
-    margin-top: 1rem;
-  }
+  gap: 24rem; /* Este gap é MUITO grande para desktop, talvez quis dizer 2.4rem ou 4rem? Ajustarei para mobile. */
+}
 
-  & .reputation {
-border: #a29a9a solid 0.2rem;
-  }
-  & .letter {
-    font-size: 1.5rem;
-    color: #b4acac;
-    font-weight: lighter;
-    margin-top: 0.1rem;
-  }
+.reputation-content p { /* Aplicado a todos os <p> dentro de .reputation-content */
+  font-size: 1.2rem;
+  color: #0c0000;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.reputation-content .reputation { /* Classe específica para cada bloco de reputação */
+  border: #a29a9a solid 0.2rem;
+  padding: 1.5rem; /* Adicionei um padding interno para os blocos */
+  box-sizing: border-box; /* Para que o padding não aumente a largura total */
+}
+
+.reputation-content .letter { /* Classe para o texto menor dentro de cada bloco */
+  font-size: 1.5rem; /* Atenção: está maior que o <p> principal. Normalmente seria menor. */
+  /* Sugestão: font-size: 0.9rem; ou 1rem; */
+  color: #b4acac;
+  font-weight: lighter;
+  margin-top: 0.1rem;
+  display: block; /* Para garantir que a margem funcione e que o <br> seja respeitado como esperado */
 }
 
 .material-symbols-outlined {
-color: chocolate;
-font-size: 2rem;
-margin-top: 4rem;
+  color: chocolate;
+  font-size: 2rem;
+  margin-top: 4rem; /* Muito espaço no topo do ícone. */
+  display: block; /* Para que a margem funcione bem */
+  margin-bottom: 0.5rem; /* Adicionei espaço abaixo do ícone */
+}
 
+/* AJUSTES PARA MOBILE */
+@media (max-width: 768px) {
+  .nossaReputacao {
+    font-size: 1.6rem; /* Reduzir tamanho da fonte do título */
+    margin-top: 3rem;  /* Reduzir margem superior */
+  }
+
+  .reputation-content {
+    flex-direction: column; /* Empilhar itens verticalmente */
+    gap: 2rem;             /* Reduzir o espaço entre os itens empilhados */
+    padding: 20px 10px;    /* Manter padding vertical, reduzir horizontal se necessário */
+  }
+
+  .reputation-content .reputation {
+    width: 90%;        /* Fazer cada item ocupar quase toda a largura */
+    max-width: 350px;  /* Limitar a largura máxima para não ficar muito largo em tablets */
+    margin-left: auto;   /* Para centralizar o bloco, se width < 100% */
+    margin-right: auto;  /* Para centralizar o bloco, se width < 100% */
+    /* A borda já está definida, o padding interno também */
+  }
+
+  .material-symbols-outlined {
+    font-size: 1.8rem; /* Reduzir um pouco o ícone */
+    margin-top: 1rem;   /* Reduzir margem superior do ícone */
+  }
+
+  .reputation-content p {
+    font-size: 1rem; /* Reduzir tamanho da fonte dos parágrafos */
+  }
+
+  .reputation-content .letter {
+    font-size: 0.9rem; /* Reduzir tamanho da fonte do texto menor, tornando-o de fato menor */
+  }
+}
+
+@media (max-width: 480px) { /* Ajustes ainda menores para telas bem pequenas */
+  .nossaReputacao {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }
+
+  .reputation-content {
+    gap: 1.5rem;
+  }
+
+  .reputation-content .reputation {
+    width: 95%; /* Pode ocupar um pouco mais da largura */
+    padding: 1rem; /* Reduzir padding interno dos blocos */
+  }
+
+   .material-symbols-outlined {
+    font-size: 1.6rem;
+    margin-top: 0.8rem;
+  }
+
+  .reputation-content p {
+    font-size: 0.9rem;
+  }
+
+  .reputation-content .letter {
+    font-size: 0.8rem;
+  }
 }
 
 /* About Card Component */
