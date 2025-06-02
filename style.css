@@ -320,7 +320,17 @@ nav .menu-links li a:hover {
     font-size: 1.2rem;
     color: #0c0000;
     font-weight: bold;
-    margin-top: 4rem;
+    margin-top: 1rem;
+  }
+
+  & .reputation {
+border: #a29a9a solid 0.2rem;
+  }
+  & .letter {
+    font-size: 1.5rem;
+    color: #b4acac;
+    font-weight: lighter;
+    margin-top: 0.1rem;
   }
 }
 
@@ -329,4 +339,110 @@ color: chocolate;
 font-size: 2rem;
 margin-top: 4rem;
 
+}
+
+/* About Card Component */
+.about-card {
+    display: flex; /* Enables flexbox layout for side-by-side items */
+    align-items: center; /* Vertically aligns the image and text box if their heights differ */
+    max-width: 850px; /* Adjust to control the overall width of the component */
+    width: 90%;       /* Responsive width */
+    margin: auto;     /* Centers the card if its parent isn't a flex container */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the whole card */
+    overflow: hidden; /* Optional: Ensures nothing spills out if calculations are slightly off */
+}
+
+.about-card__image-wrapper {
+    flex: 0 0 65%; /* Image area takes up 65% of the card's width and doesn't grow/shrink */
+                   /* This div's boundary defines where the gray photo area visually ends before overlap */
+    line-height: 0; /* Fixes potential small gap below image */
+}
+
+.about-card__image-wrapper img {
+    display: block; /* Removes extra space below the image */
+    width: 100%;    /* Image fills its wrapper */
+    height: auto;   /* Maintains aspect ratio */
+    /* The image itself should have the gray background as part of the photo */
+}
+
+.about-card__text-content {
+    flex: 0 0 45%; /* Text box aims for 45% of card's width. (65% + 45% = 110%) */
+    background-color: #2A43A5; /* Dark blue from your image */
+    color: white;
+    padding: 30px 35px; /* Inner spacing: top/bottom, left/right */
+    box-sizing: border-box; /* Padding and border are included in the element's total width and height */
+    
+    /* THE OVERLAP MAGIC: */
+    margin-left: -10%; /* Pulls the text box left by 10% of the .about-card's width, creating the overlap */
+                       /* 65% (image) + 45% (text) - 10% (overlap) = 100% (total visual width) */
+                       /* Visible image part will be 65% - 10% = 55% */
+                       /* Visible text part will be 45% */
+
+    z-index: 1; /* Ensures the text box is on top of the image wrapper in case of overlap issues */
+    align-self: stretch; /* Makes the blue box match the height of the image if image is taller */
+    display: flex; /* To allow vertical centering of content inside if needed */
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content within the blue box */
+}
+
+.about-card__text-content h2 {
+    margin-top: 0;
+    font-size: 26px; /* Adjust as needed */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-card__text-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.about-card__text-content p:last-of-type {
+    margin-bottom: 25px; /* More space before the button */
+}
+
+.about-card__button {
+    display: inline-block; /* Allows padding and margin, and doesn't take full width */
+    background-color: white;
+    color: #2A43A5; /* Blue text, same as text box background */
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    align-self: flex-start; /* Aligns button to the start of the flex container if text content varies */
+}
+
+.about-card__button:hover {
+    background-color: #f0f0f0; /* Slightly darker white on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column; /* Stack items vertically */
+        max-width: 500px; /* Adjust max-width for smaller screens */
+    }
+
+    .about-card__image-wrapper,
+    .about-card__text-content {
+        flex-basis: auto; /* Reset flex-basis */
+        width: 100%;      /* Make both take full width */
+    }
+
+    .about-card__text-content {
+        margin-left: 0; /* Remove the negative margin for overlap */
+        padding: 25px; /* Adjust padding for smaller screens */
+    }
+    .about-card__text-content h2 {
+        font-size: 22px;
+    }
+    .about-card__text-content p {
+        font-size: 14px;
+    }
+    .about-card__button {
+        align-self: center; /* Center button on smaller screens */
+        padding: 10px 18px;
+    }
 }
