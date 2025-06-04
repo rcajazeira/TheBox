@@ -622,42 +622,78 @@ nav .menu-links li a:hover {
 
 
 
-.Services{
+.Services {
   background-color: #f8f5f5;
   padding-top: 1rem;
-  
-  & .services-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 2.5rem;
-    text-align: center;
-  
+}
+
+.Services .services-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.Services .services-content {
+  display: grid;
+  gap: 5rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Services .service-item-white,
+.Services .service-item-blue {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Services .service-item-white {
+  background-color: white;
+  border: 50px solid white;
+}
+
+.Services .service-item-blue {
+  background-color: #458dda;
+  border: 50px solid #458dda;
+}
+
+/* --- Media Query para telas menores (ex: até 768px) --- */
+@media (max-width: 768px) {
+  .Services .services-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
 
-  & .services-content {
-    display: grid;
-    gap: 5rem;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    
+  .Services .services-content {
+    grid-template-columns: 1fr; /* Muda para uma única coluna */
+    gap: 2rem;
+    padding: 1rem 0.5rem;
   }
 
-  & .service-item-white {
-    background-color: white;
-    border: 50px solid rgb(255, 255, 255);
-    width: 70%;
+  .Services .service-item-white,
+  .Services .service-item-blue {
+    width: 90%;
+    border-width: 25px; /* Reduz o "border-padding" */
+  }
+}
 
+/* --- Opcional: Media Query para telas ainda menores (ex: até 480px) --- */
+@media (max-width: 480px) {
+  .Services .services-title {
+    font-size: 1.8rem;
   }
 
-  & .service-item-blue {
-    background-color: #458dda;
-    border: 50px solid #458dda;
-    width: 70%;
-
+  .Services .services-content {
+    gap: 1.5rem;
   }
 
-
+  .Services .service-item-white,
+  .Services .service-item-blue {
+    width: 95%;
+    border-width: 15px;
+  }
 }
 
