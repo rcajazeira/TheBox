@@ -572,7 +572,7 @@ nav .menu-links li a:hover {
 }
 
 @media (max-width: 480px) { /* Ajuste fino para telas muito pequenas, se necessário */
-  .main-content {
+ .main-content {
      /* Pode precisar de ajuste aqui se o header ficar ainda mais alto
      padding-top: ALTURA_HEADER_MUITO_PEQUENO; */
   }
@@ -619,3 +619,45 @@ nav .menu-links li a:hover {
     font-size: 0.8rem;
   }
 }
+
+
+
+.Services{
+  background-color: #f8f5f5;
+  padding-top: 1rem;
+  
+  & .services-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  
+  }
+
+  & .services-content {
+    display: grid;
+    gap: 5rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
+
+  & .service-item-white {
+    background-color: white;
+    border: 50px solid rgb(255, 255, 255);
+    width: 70%;
+
+  }
+
+  & .service-item-blue {
+    background-color: #458dda;
+    border: 50px solid #458dda;
+    width: 70%;
+
+  }
+
+
+}
+
