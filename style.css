@@ -5,8 +5,13 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* Para rolagem suave com links # */
+}
+
 body {
-  font-family: Arial, sans-serif;
+  /* MODIFICADO: Adicionando Inter como fonte principal, com fallback para Arial */
+  font-family: 'Inter', Arial, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
@@ -21,10 +26,16 @@ ul {
   list-style: none;
 }
 
-/* 2. Estilos do Header e Navegação */
-.navegacao { /* Usando a classe do seu HTML */
-  background-color: #fff; /* Fundo branco para o header (como no exemplo que você quer) */
-  color: #333; /* Cor do texto padrão no header (se houver algum fora dos links) */
+/* Adicionando padding ao main-content para o header fixo */
+.main-content {
+  padding-top: 140px; /* Altura aproximada do seu header (logo 120px + padding). Ajuste se necessário. */
+}
+
+
+/* 2. Estilos do Header e Navegação (Seu CSS Original - Sem alterações diretas aqui) */
+.navegacao {
+  background-color: #fff;
+  color: #333;
   padding: 10px 0;
   width: 100%;
   position: fixed;
@@ -36,68 +47,57 @@ ul {
 
 nav {
   display: flex;
-  justify-content: space-between; /* UL à esquerda, H1 à direita */
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* 3. Estilo do H1 (Logo) */
 nav h1 {
-  margin: 0; /* Remove margem padrão do h1 */
-  /* Se quiser que o logo ocupe um espaço específico, pode adicionar flex-grow, flex-shrink, flex-basis */
+  margin: 0;
 }
 
 .logo-img {
-  /* Ajuste para a imagem do logo (larga e baixa) */
-  height: 120px;   /* Defina a altura desejada */
-  width: auto;    /* Largura se ajusta para manter a proporção */
-  max-width: 100%; /* Garante que não ultrapasse o container, especialmente no mobile */
+  height: 120px;
+  width: auto;
+  max-width: 100%;
   display: block;
 }
 
-/* 4. Estilo da Lista de Navegação (UL) e Itens (LI) */
-/* Estilo para a UL - .menu-links */
 nav .menu-links {
   display: flex;
   align-items: center;
-  background-color: white; /* Fundo branco para a UL, como solicitado */
-  /* Se o header já é branco, essa cor de fundo pode não ser visível
-     ou pode ser usada para um destaque se o header tiver outra cor. */
-  /* Se quiser um padding e bordas na caixa da UL: */
-  /* padding: 8px 15px; */
-  /* border-radius: 5px; */
+  /* background-color: white; -> Removido, já que a nav tem fundo branco */
 }
 
 nav .menu-links li {
-  margin-right: 30px; /* Espaçamento à direita de cada item (exceto o último) */
+  margin-right: 30px;
   font-weight: bold;
 }
 
 nav .menu-links li:last-child {
-  margin-right: 0; /* Remove margem do último item */
+  margin-right: 0;
 }
 
 nav .menu-links li a {
-  color: #333; /* Cor dos links */
-  padding: 8px 12px; /* Espaçamento clicável nos links */
+  color: #333;
+  padding: 8px 12px;
   display: block;
   transition: color 0.3s ease;
-  white-space: nowrap; /* Impede que o texto do link quebre em duas linhas */
+  white-space: nowrap;
 }
 
 nav .menu-links li a:hover {
   color: #007bff;
 }
 
-/* 5. Estilo do Último Item da Navegação (span .contato-destaque) */
 .contato-destaque {
-  background-color: #007bff; /* Cor de fundo para o destaque */
-  color: white;
-  padding: 8px 15px; /* Ajuste o padding conforme o desejado */
+  background-color: #007bff;
+  color: white !important; /* Força a cor do texto para branco */
+  padding: 8px 15px;
   border-radius: 4px;
-  display: inline-block; /* Para o padding e background funcionarem bem */
+  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
@@ -106,126 +106,44 @@ nav .menu-links li a:hover {
 }
 
 
-/* 6. Adaptação para Mobile (Responsividade) */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column; /* Logo e menu um abaixo do outro */
-    align-items: stretch; /* Faz os itens ocuparem a largura */
-    padding: 10px 15px; /* Ajusta o padding da nav no mobile */
-  }
-
-  nav h1 { /* Logo */
-    order: 1; /* Logo primeiro no mobile */
-    text-align: center; /* Centraliza o logo */
-    margin-bottom: 15px;
-  }
-
-  .logo-img {
-     height: 35px; /* Altura um pouco menor no mobile, ajuste se precisar */
-  }
-
-  nav .menu-links { /* Lista de links */
-    order: 2; /* Menu depois do logo */
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch; /* Itens da lista esticam */
-    background-color: transparent; /* Remove fundo branco da UL no mobile, cada item terá o seu */
-    padding: 0; /* Remove padding da UL se houver */
-  }
-
-  nav .menu-links li {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-
-  nav .menu-links li:last-child {
-    margin-bottom: 0;
-  }
-
-  nav .menu-links li a {
-    padding: 12px; /* Aumenta área de toque */
-    text-align: center; /* Centraliza texto dos links */
-    background-color: #f9f9f9; /* Fundo para cada item do menu no mobile */
-    border: 1px solid #eee;
-    border-radius: 4px;
-  }
-  
-  .contato-destaque {
-    display: block; /* Ocupa toda a largura do LI */
-    padding: 12px 15px; /* Ajusta padding */
-    /* Cores já estão definidas, mas pode ajustá-las aqui para mobile se quiser */
-  }
-
-  /* Ajusta o margin-top do conteúdo principal por causa do header fixo */
-  main {
-    /* A altura do header no mobile pode variar. Ajuste esse valor.
-       Pode ser (padding-top do header + altura_logo + margin_bottom_logo + padding_ul + (numero_links * (altura_link + margin_bottom_link)))
-       Uma inspeção no navegador ajuda a determinar a altura correta. */
-    margin-top: 180px; /* Valor inicial, ajuste conforme necessário! */
-  }
-}
-
-/* Ajuste fino para telas muito pequenas, se necessário */
-@media (max-width: 480px) {
-  .logo-img {
-    height: 30px; /* Ainda menor se precisar */
-  }
-  nav .menu-links li a, .contato-destaque {
-    font-size: 0.9em;
-    padding: 10px;
-  }
-  main {
-    margin-top: 170px; /* Reajuste se necessário */
-  }
-}
+/* ... Seu CSS para .hero, .feature-project-box, .reputation-section etc. ... */
 
 /* Estilo da seção principal tipo 'hero' */
 .hero {
-  display: flex;
+  display: flex; /* Mudado para flex para melhor controle */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
-  background-color: #fff;
-  text-align: center;
+  /* padding: 60px 20px;  Removido pois a imagem cobre tudo e o hero-content é posicionado */
+  background-color: #fff; /* Fallback se a imagem não carregar */
+  /* text-align: center; -> Conteúdo será alinhado por flexbox */
   min-height: 100vh;
-  text-align: center;
-  align-items: center;
+  position: relative; /* Já estava, correto para posicionar filhos */
+  overflow: hidden; /* Já estava, correto */
 }
 
 .full-screen-image {
-  width: 100vw;
-  display: block;
-  object-fit: cover;
-}
-
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.full-screen-image {
+  position: absolute; /* Para cobrir o fundo */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  object-fit: fill;
+  height: 100%;
+  object-fit: cover; /* Cover é geralmente melhor que fill para imagens de fundo */
+  z-index: 0; /* Atrás do conteúdo */
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-20%);
+  position: relative; /* Alterado para relative para ser sobre a imagem com z-index, e não absoluto dentro do flow normal */
+  z-index: 1; /* Para ficar sobre a imagem */
+  top: auto; /* Resetado de seu valor original */
+  left: 5%; /* Mantido */
+  transform: translateY(-10%); /* Ajustado levemente o translateY */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   color: white;
-  z-index: 2;
+  /* Outros estilos que você já tinha */
+  padding: 20px; /* Adiciona um padding para não colar nas bordas em telas menores */
 }
 
 .main-heading {
@@ -236,25 +154,23 @@ nav .menu-links li a:hover {
   text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
 }
 
-/* Ajustes para .feature-project-box */
 .feature-project-box {
-  position: absolute; /* Adicionado para posicionamento relativo ao .hero */
-  bottom: 20px;       /* Posiciona na parte inferior com uma margem de 20px */
-  right: 20px;        /* Posiciona na direita com uma margem de 20px */
-  background-color: rgba(0, 55, 100, 0.9); /* Cor azul escura translúcida como na imagem de exemplo */
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 55, 100, 0.9);
   padding: 25px;
-  /* border: 2px solid #007bff; Removida a borda azul clara, pois o exemplo não parece ter */
-  border-radius: 0px; /* Removido o arredondamento para um visual mais reto como no exemplo */
-  color: #fff; /* Cor do texto alterada para branco para contrastar com o fundo azul */
-  width: 300px; /* Largura mantida, ajuste se necessário */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-  z-index: 2; /* Garante que fique sobre a imagem */
+  color: #fff;
+  width: 300px;
+  max-width: calc(100% - 40px); /* Para não vazar em telas muito pequenas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Sobre a imagem e o .hero-content se precisar */
   box-sizing: border-box;
-  /* Removido justify-content e align-items pois não são mais relevantes com position:absolute */
 }
 
 .feature-project-box h2 {
   font-size: 1.5rem;
+  margin-top:0;
   margin-bottom: 10px;
 }
 
@@ -279,11 +195,11 @@ nav .menu-links li a:hover {
   align-items: center;
   font-weight: bold;
   padding: 8px 12px;
-  border: 1px solid #007bff;
+  border: 1px solid #007bff; /* Pode querer ajustar essa cor */
   border-radius: 5px;
-  background-color: #f0f8ff;
-  color: #007bff;
-  transition: background-color 0.3s ease;
+  background-color: transparent; /* Exemplo: fundo transparente */
+  color: #fff; /* Cor do texto para branco */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-nav a:hover {
@@ -296,107 +212,403 @@ nav .menu-links li a:hover {
   margin: 0 5px;
 }
 
+/* Seção Reputation */
+.reputation-section {
+  padding: 4rem 1rem; /* Espaçamento da seção */
+  background-color: #ffffff; /* Fundo branco para esta seção, por exemplo */
+}
 .nossaReputacao {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  margin-top: 6rem;
-  /* justify-content: center; display: flex; - Não é necessário aqui, text-align: center é suficiente para um H2 */
+  margin-top: 0; /* Removido, pois a section já tem padding */
+  margin-bottom: 3rem; /* Espaço abaixo do título */
 }
 
 .reputation-content {
   display: flex;
-  justify-content: center; /* Centraliza os itens na linha (desktop) ou coluna (mobile) */
-  align-items: center;   /* Centraliza os itens no eixo transversal */
-  flex-direction: row;   /* Padrão para desktop */
+  justify-content: center;
+  align-items: flex-start; /* Alinha os cards no topo */
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
   text-align: center;
-  padding: 20px;
-  gap: 24rem; /* Este gap é MUITO grande para desktop, talvez quis dizer 2.4rem ou 4rem? Ajustarei para mobile. */
+  padding: 0 10px; /* Ajuste padding se necessário */
+  gap: 2rem; /* Reduzi drasticamente o gap */
 }
 
-.reputation-content p { /* Aplicado a todos os <p> dentro de .reputation-content */
-  font-size: 1.2rem;
-  color: #0c0000;
-  font-weight: bold;
-  margin-top: 1rem;
+.reputation-content .reputation {
+  border: 1px solid #e0e0e0; /* Borda mais sutil */
+  padding: 1.5rem;
+  box-sizing: border-box;
+  width: calc(33.333% - 1.4rem); /* Para 3 colunas com gap, ajuste se necessário */
+  min-width: 280px; /* Largura mínima para cada card */
+  background-color: #fff; /* Garante fundo branco nos cards */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-.reputation-content .reputation { /* Classe específica para cada bloco de reputação */
-  border: #a29a9a solid 0.2rem;
-  padding: 1.5rem; /* Adicionei um padding interno para os blocos */
-  box-sizing: border-box; /* Para que o padding não aumente a largura total */
+.reputation-content .material-symbols-outlined {
+  color: #e08331; /* Cor do ícone, pode ser seu azul (indigo-700) */
+  font-size: 2.5rem; /* Tamanho do ícone */
+  margin-top: 0; /* Reset margin */
+  margin-bottom: 1rem; /* Espaço abaixo do ícone */
+  display: block;
 }
 
-.reputation-content .letter { /* Classe para o texto menor dentro de cada bloco */
-  font-size: 1.5rem; /* Atenção: está maior que o <p> principal. Normalmente seria menor. */
-  /* Sugestão: font-size: 0.9rem; ou 1rem; */
-  color: #b4acac;
-  font-weight: lighter;
-  margin-top: 0.1rem;
-  display: block; /* Para garantir que a margem funcione e que o <br> seja respeitado como esperado */
+.reputation-content p { /* Estilo do título de cada card de reputação */
+  font-size: 1.125rem; /* text-lg */
+  color: #111827; /* text-gray-900 (aproximado) */
+  font-weight: 600; /* font-semibold */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
-.material-symbols-outlined {
-  color: chocolate;
-  font-size: 2rem;
-  margin-top: 4rem; /* Muito espaço no topo do ícone. */
-  display: block; /* Para que a margem funcione bem */
-  margin-bottom: 0.5rem; /* Adicionei espaço abaixo do ícone */
+.reputation-content .letter { /* Estilo do texto descritivo */
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* text-gray-500 (aproximado) */
+  font-weight: normal; /* Reset do seu 'lighter' */
+  line-height: 1.5;
+  margin-top: 0;
+  display: block;
 }
 
-/* AJUSTES PARA MOBILE */
+
+/* ============================================================================= */
+/* ESTILOS DA SEÇÃO "ABOUT US" ADAPTADOS DO MODELO TAILWIND                     */
+/* ============================================================================= */
+
+.about-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 4rem 1rem; /* p-4 e algum padding vertical (8*0.25rem = 2rem + ajuste) */
+    background-color: #ffffff; /* bg-white (Tailwind) - Fundo da seção */
+    overflow: hidden; /* Para conter a sombra do .about-card__text-content se necessário */
+}
+
+.about-card {
+    display: flex;
+    align-items: center;
+    max-width: 64rem;    /* max-w-5xl (Tailwind's 5xl) */
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    /* Remover estilos anteriores do about-card como background, shadow e overflow diretos */
+}
+
+.about-card__image-wrapper {
+    flex: 0 0 66.666667%; /* w-2/3 do Tailwind */
+    z-index: 0;
+    position: relative; /* Para contexto de empilhamento */
+}
+
+.about-card__image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem; /* rounded-lg (Tailwind) */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg (Tailwind) */
+}
+
+.about-card__text-content {
+    width: 50%;             /* w-1/2 (Tailwind) - Ajuste conforme a estética desejada */
+    max-width: 400px;       /* Largura máxima fixa para o texto */
+    background-color: #4338ca; /* bg-indigo-700 (Tailwind) */
+    color: white;
+    padding: 2.5rem;        /* p-10 (Tailwind) */
+    box-sizing: border-box;
+    border-top-right-radius: 0.5rem;    /* rounded-r-lg */
+    border-bottom-right-radius: 0.5rem; /* rounded-r-lg */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl (Tailwind) */
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* z-10 (Tailwind) */
+   
+    /* O margin-left: -10% anterior não é o ideal com position: absolute.
+       A sobreposição agora é controlada pela largura da imagem (66.67%) e a caixa de texto
+       sendo posicionada a 'right: 0' dentro do .about-card.
+       A caixa de texto (width: 50%) começará de right: 0 e irá 50% para a esquerda,
+       sobrepondo a imagem que ocupa 66.67% da esquerda. */
+
+    /* Remover o flex original do seu CSS, o Tailwind não faria isso aqui para posicionamento */
+    /* display: flex; flex-direction: column; justify-content: center; -> Removido */
+    /* O conteúdo interno será alinhado com margens */
+}
+
+.about-card__text-content h2 {
+    margin-top: 0;
+    font-size: 1.875rem;   /* text-3xl (Tailwind) */
+    line-height: 2.25rem;
+    font-weight: 700;      /* font-bold (Tailwind) */
+    margin-bottom: 1.5rem; /* mb-6 (Tailwind) */
+}
+
+.about-card__text-content p {
+    font-size: 0.875rem;   /* text-sm (Tailwind) */
+    line-height: 1.625;    /* leading-relaxed (Tailwind) */
+    margin-bottom: 1rem;   /* mb-4 (Tailwind) */
+}
+
+.about-card__text-content p:last-of-type { /* No original era apenas a segunda <p>, pode ser melhor usar assim */
+    margin-bottom: 2rem;   /* mb-8 (Tailwind) */
+}
+
+.about-card__button {
+    display: inline-block;
+    background-color: white;
+    color: #4338ca;                   /* text-indigo-700 (Tailwind) */
+    padding: 0.75rem 1.5rem;           /* py-3 px-6 (Tailwind) */
+    text-decoration: none;
+    font-weight: 600;                  /* font-semibold (Tailwind) */
+    font-size: 0.875rem;               /* text-sm (Tailwind) */
+    border-radius: 0.375rem;           /* rounded-md (Tailwind) */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* align-self: flex-start; -> Removido, pois não há flex no container */
+}
+
+.about-card__button:hover {
+    background-color: #e0e7ff; /* hover:bg-indigo-100 (Tailwind) */
+}
+
+/* ============================================================================= */
+/* FIM DOS ESTILOS "ABOUT US" ADAPTADOS                                        */
+/* ============================================================================= */
+
+/* Seção Services (Placeholder - você pode adicionar estilos aqui) */
+.Services {
+    padding: 4rem 1rem;
+    /* min-height: 50vh; Para dar algum espaço */
+    text-align: center;
+}
+
+
+/* ============================================================================= */
+/* RESPONSIVIDADE                                                              */
+/* ============================================================================= */
+
+@media (max-width: 992px) { /* Tablet e telas menores */
+    .reputation-content .reputation {
+        width: calc(50% - 1rem); /* 2 colunas */
+        min-width: 260px;
+    }
+}
+
+
 @media (max-width: 768px) {
+  /* AJUSTES DE NAVEGAÇÃO E HEADER (SEU CSS ORIGINAL, MANTIDO COM AJUSTE NO MAIN) */
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 15px;
+  }
+
+  nav h1 {
+    order: 1;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .logo-img {
+     height: 35px; /* Já tinha */
+  }
+
+  nav .menu-links {
+    order: 2;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  nav .menu-links li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  nav .menu-links li:last-child {
+    margin-bottom: 0;
+  }
+
+  nav .menu-links li a {
+    padding: 12px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+ 
+  .contato-destaque {
+    display: block;
+    padding: 12px 15px;
+  }
+
+  /* AJUSTE DINÂMICO DA MARGEM SUPERIOR DO MAIN PARA HEADER FIXO NO MOBILE */
+  /* Removendo o margin-top fixo e usando padding no main-content
+     que já foi definido fora da media query e deve ser suficiente.
+     Caso a altura do header mude drasticamente no mobile e cause problemas,
+     poderia ser reintroduzido com um valor mais preciso:
+  */
+  /*
+  .main-content {
+      margin-top: 0;  A altura do header empilhado (aprox: logo 35px + mb 15px + 5 links * (padding + altura))
+                        Pode ser em torno de 200px a 250px. Meça no inspetor.
+                        padding-top: VALOR_ALTURA_HEADER_MOBILE_EMPILHADO;
+  }
+  */
+
+  /* AJUSTES HERO SECTION */
+  .hero-content {
+      left: 50%;
+      transform: translate(-50%, -10%); /* Centraliza e ajusta vertical */
+      width: 90%;
+      align-items: center;
+      text-align: center;
+  }
+  .main-heading {
+      font-size: 2.5rem; /* Um pouco menor */
+      text-align: center;
+  }
+  .feature-project-box {
+      position: static; /* Para ficar abaixo do hero-content no mobile */
+      transform: none;
+      width: 90%;
+      max-width: 400px; /* Limita a largura */
+      margin: 2rem auto 0 auto; /* Espaçamento */
+  }
+
+
+  /* AJUSTES ABOUT SECTION (Tailwind inspired) */
+  .about-section {
+      min-height: auto;
+      padding: 2rem 1rem;
+  }
+
+  .about-card {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .about-card__image-wrapper {
+      flex-basis: auto;
+      width: 100%;
+  }
+
+  .about-card__image-wrapper img {
+      height: auto;
+      max-height: 300px;
+      border-radius: 0.5rem 0.5rem 0 0; /* Cantos de cima arredondados */
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-md */
+  }
+
+  .about-card__text-content {
+      position: static; /* Retorna ao fluxo normal */
+      transform: none;
+      width: 100%;
+      max-width: none;
+      margin-left: 0;
+      padding: 1.5rem;  /* p-6 (Tailwind) */
+      text-align: left; /* O original Tailwind não centraliza */
+      border-radius: 0 0 0.5rem 0.5rem; /* Cantos de baixo arredondados */
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-md */
+  }
+
+  .about-card__text-content h2 {
+      font-size: 1.5rem; /* text-2xl */
+      margin-bottom: 1rem;
+  }
+
+  .about-card__text-content p {
+      font-size: 0.875rem; /* text-sm (mantém) */
+      margin-bottom: 1rem;
+  }
+  .about-card__text-content p:last-of-type {
+      margin-bottom: 1.5rem; /* mb-6 */
+  }
+
+  .about-card__button {
+      align-self: flex-start;
+  }
+
+  /* AJUSTES REPUTATION SECTION (SEU CSS ORIGINAL) */
+  .reputation-section {
+    padding: 2rem 1rem;
+  }
   .nossaReputacao {
-    font-size: 1.6rem; /* Reduzir tamanho da fonte do título */
-    margin-top: 3rem;  /* Reduzir margem superior */
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   .reputation-content {
-    flex-direction: column; /* Empilhar itens verticalmente */
-    gap: 2rem;             /* Reduzir o espaço entre os itens empilhados */
-    padding: 20px 10px;    /* Manter padding vertical, reduzir horizontal se necessário */
-  }
-
-  .reputation-content .reputation {
-    width: 90%;        /* Fazer cada item ocupar quase toda a largura */
-    max-width: 350px;  /* Limitar a largura máxima para não ficar muito largo em tablets */
-    margin-left: auto;   /* Para centralizar o bloco, se width < 100% */
-    margin-right: auto;  /* Para centralizar o bloco, se width < 100% */
-    /* A borda já está definida, o padding interno também */
-  }
-
-  .material-symbols-outlined {
-    font-size: 1.8rem; /* Reduzir um pouco o ícone */
-    margin-top: 1rem;   /* Reduzir margem superior do ícone */
-  }
-
-  .reputation-content p {
-    font-size: 1rem; /* Reduzir tamanho da fonte dos parágrafos */
-  }
-
-  .reputation-content .letter {
-    font-size: 0.9rem; /* Reduzir tamanho da fonte do texto menor, tornando-o de fato menor */
-  }
-}
-
-@media (max-width: 480px) { /* Ajustes ainda menores para telas bem pequenas */
-  .nossaReputacao {
-    font-size: 1.4rem;
-    margin-top: 2rem;
-  }
-
-  .reputation-content {
+    flex-direction: column;
     gap: 1.5rem;
   }
 
   .reputation-content .reputation {
-    width: 95%; /* Pode ocupar um pouco mais da largura */
-    padding: 1rem; /* Reduzir padding interno dos blocos */
+    width: 100%; /* Ocupa toda a largura no mobile */
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-   .material-symbols-outlined {
-    font-size: 1.6rem;
-    margin-top: 0.8rem;
+  .reputation-content .material-symbols-outlined {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .reputation-content p {
+    font-size: 1rem;
+  }
+
+  .reputation-content .letter {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) { /* Ajuste fino para telas muito pequenas, se necessário */
+  .main-content {
+     /* Pode precisar de ajuste aqui se o header ficar ainda mais alto
+     padding-top: ALTURA_HEADER_MUITO_PEQUENO; */
+  }
+  .logo-img {
+    height: 30px;
+  }
+  nav .menu-links li a, .contato-destaque {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+ 
+  .main-heading {
+      font-size: 2rem;
+  }
+
+  .feature-project-box {
+    padding: 20px;
+  }
+  .feature-project-box h2 {
+    font-size: 1.3rem;
+  }
+  .feature-project-box p {
+    font-size: 0.9rem;
+  }
+
+  .nossaReputacao {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .reputation-content .reputation {
+    padding: 1rem;
+  }
+
+   .reputation-content .material-symbols-outlined {
+    font-size: 1.8rem;
   }
 
   .reputation-content p {
@@ -406,124 +618,4 @@ nav .menu-links li a:hover {
   .reputation-content .letter {
     font-size: 0.8rem;
   }
-}
-
-/* About Card Component */
-.about-section {
-    width: 100%; /* A section pode ocupar a largura disponível */
-}
-
-/* About Card Component */
-.about-card {
-    background-color: white; /* Fundo do card, visível se a imagem tiver transparência */
-    display: flex;
-    align-items: stretch; /* Faz com que os filhos (imagem e texto) tenham a mesma altura */
-    max-width: 960px;     /* Largura máxima do componente */
-    width: 100%;          /* Responsivo até a largura máxima */
-    margin: 20px auto;    /* Centraliza o card na página e adiciona margem vertical */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    overflow: hidden;     /* Garante que nada vaze, especialmente com box-shadow */
-}
-
-.about-card__image-wrapper {
-    flex: 0 0 60%; /* A área da imagem ocupa 60% da largura do card */
-    /* O fundo cinza deve ser parte da imagem real */
-    line-height: 0; /* Remove possível espaço extra abaixo da imagem */
-    position: relative; /* Necessário para que o z-index do texto funcione corretamente sobre a imagem */
-}
-
-.about-card__image-wrapper img {
-    display: block;
-    width: 100%;
-    height: 100%; /* Faz a imagem preencher a altura do wrapper */
-    object-fit: cover; /* Garante que a imagem cubra o wrapper mantendo a proporção, cortando se necessário */
-}
-
-.about-card__text-content {
-    flex: 0 0 50%; /* O conteúdo de texto tenta ocupar 50% da largura do card */
-    background-color: #2A43A5; /* Azul escuro da sua imagem */
-    color: white;
-    padding: 50px 40px; /* Aumentei o padding para mais espaço interno (vertical, horizontal) */
-    box-sizing: border-box;
-    
-    /* MÁGICA DA SOBREPOSIÇÃO: */
-    /* (60% da imagem + 50% do texto = 110%) - 10% de margem negativa = 100% da largura total */
-    margin-left: -10%; /* Puxa o bloco de texto 10% para a esquerda, sobrepondo a imagem */
-                       /* Este valor (10%) é a quantidade de sobreposição desejada */
-
-    z-index: 1; /* Garante que o bloco de texto fique por cima da imagem */
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza o conteúdo (título, parágrafos, botão) verticalmente */
-}
-
-.about-card__text-content h2 {
-    margin-top: 0;
-    font-size: 28px; /* Ligeiramente maior para destaque */
-    font-weight: bold;
-    margin-bottom: 20px; /* Mais espaço abaixo do título */
-}
-
-.about-card__text-content p {
-    font-size: 16px; /* Ligeiramente maior para legibilidade */
-    line-height: 1.7; /* Maior espaçamento entre linhas */
-    margin-bottom: 20px;
-}
-.about-card__text-content p:last-of-type {
-    margin-bottom: 30px; /* Mais espaço antes do botão */
-}
-
-.about-card__button {
-    display: inline-block;
-    background-color: white;
-    color: #2A43A5;
-    padding: 14px 24px; /* Botão um pouco maior */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    align-self: flex-start; /* Alinha o botão à esquerda */
-}
-
-.about-card__button:hover {
-    background-color: #f0f0f0;
-}
-
-/* Ajustes responsivos para telas menores */
-@media (max-width: 768px) {
-    .about-card {
-        flex-direction: column; /* Empilha os itens verticalmente */
-        /* max-width: 500px; */ /* Removido para permitir que o card use mais da largura em tablets, por exemplo */
-                                /* Pode ser re-adicionado ou ajustado conforme necessário. Ex: max-width: 90%; */
-    }
-
-    .about-card__image-wrapper,
-    .about-card__text-content {
-        flex-basis: auto; /* Reseta o flex-basis */
-        width: 100%;      /* Faz ambos ocuparem a largura total */
-    }
-
-    .about-card__image-wrapper img {
-        height: auto; /* Altura automática para imagem no mobile para manter proporção com largura total */
-        max-height: 300px; /* Opcional: Limitar altura da imagem no mobile */
-        object-fit: cover; /* Garante que a imagem cubra, pode ser 'contain' se preferir ver toda a imagem */
-    }
-    
-    .about-card__text-content {
-        margin-left: 0; /* Remove a margem negativa (sobreposição) */
-        padding: 30px 25px; /* Ajusta o padding para telas menores */
-        text-align: center; /* Centraliza o texto no mobile */
-    }
-    .about-card__text-content h2 {
-        font-size: 24px;
-    }
-    .about-card__text-content p {
-        font-size: 15px;
-    }
-    .about-card__button {
-        align-self: center; /* Centraliza o botão em telas menores */
-        padding: 12px 20px;
-    }
 }

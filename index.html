@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Adicionando a fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -21,7 +23,7 @@
         </h1>
         <ul class="menu-links">
           <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="#about">About Us</a></li> <!-- Adicionado ID para linkar -->
           <li><a href="#">Projects</a></li>
           <li><a href="#">Services</a></li>
           <li>
@@ -48,20 +50,20 @@
 
             <nav class="project-nav">
               <ul>
-                <li><a href="#"><span class="arrow">&#8592;</span> Back</a></li>
-                <li><a href="#">Next <span class="arrow">&#8594;</span></a></li>
+                <li><a href="#"><span class="arrow">←</span> Back</a></li>
+                <li><a href="#">Next <span class="arrow">→</span></a></li>
               </ul>
             </nav>
           </aside>
-        
+       
       </section>
       <!-- segunda sessão -->
-       <section>
+       <section class="reputation-section"> <!-- Adicionei uma classe para a seção se precisar estilizá-la -->
         <h2 class="nossaReputacao">Our Reputation</h2>
         <div class="reputation-content">
          
           <div class="reputation">
-          
+         
             <span class="material-symbols-outlined">
   headset_mic
 </span>
@@ -87,31 +89,35 @@
         </div>
        </section>
 
+       <!-- sessão 3 de about -->
 
-       <section class="about-section">
+
+       <section id="about" class="about-section"> <!-- Adicionado ID "about" -->
         <div class="about-card">
-        <div class="about-card__image-wrapper">
-            <!-- Imagem ilustrativa -->
-            <img src="https://classic.exame.com/wp-content/uploads/2016/09/size_960_16_9_thinkstockphotos-1773660271.jpg" alt="Man with glasses, looking thoughtfully to the side">
+            <div class="about-card__image-wrapper">
+                <!-- Imagem do exemplo Tailwind para replicar o visual -->
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCceivLeev8JsU4zqWBZuCTudcIc7z08xsdQ3aPrW3FDcEJHTnXj5njF6DOJUZVziCwKYZFpPjrEDxwOFYHv1hj0nd2POzifw7rc0rtoijESpq-LMi7GWa3lR1BWJqPFbgaR96vjtswDNCu_teUVgeTlDpM0V_DDCchGNuUIhoHKWZ0yDZ5HQFN3LNqSVp9Ok73sts7NtaOmztVogwPfL8V9IitKGPSR1nm-P_JVx1al-SnA3kJgBEVLl0ADaadOn_59F6DeKGEZHH2" alt="Man with glasses wearing a polo shirt">
+            </div>
+            <div class="about-card__text-content">
+                <h2>About us</h2>
+                <p>
+                    For more than 30 years we have been delivering world-class construction
+                    and we've built many lasting relationships along the way.
+                </p>
+                <p>
+                    We've matured into an industry leader and trusted resource for those seeking
+                    quality, innovation and reliability when building in the U.S.
+                </p>
+                <a href="#" class="about-card__button">More on Our History</a>
+            </div>
         </div>
-        <div class="about-card__text-content">
-            <h2>About us</h2>
-            <p>
-                For more than 30 years we have been delivering world-class construction
-                and we've built many lasting relationships along the way.
-            </p>
-            <p>
-                We've matured into an industry leader and trusted resource for those seeking
-                quality, innovation and reliability when building in the U.S.
-            </p>
-            <a href="#" class="about-card__button">More on Our History</a>
-        </div>
-    </div>
        </section>
        <section class="Services">
-        
+        <!-- Conteúdo da seção Services -->
+        <!-- Exemplo: <h2>Our Services</h2> -->
        </section>
+
+       <!-- sessão 4 -->
     </main>
   </body>
 </html>
-
