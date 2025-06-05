@@ -707,14 +707,79 @@ nav .menu-links li a:hover {
 
 /* sessão parte 4 */
 
+.sessao-quatro {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
 .icones-box {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 5rem;
   flex-wrap: wrap;
-  gap: 20rem; /* Espaçamento entre os ícones */
-  padding: 2rem 1rem; /* Espaçamento interno */
-  background-color: white; /* Fundo da seção */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.icone-com-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quadro {
+  background: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.quadro span.material-symbols-outlined {
+  font-size: 40px;
+  color: #f59e0b; /* cor laranja suave */
+}
+
+.quadro h2 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #1e293b; /* azul escuro */
+}
+
+.quadro p {
+  margin: 0;
+  font-size: 1rem;
+  color: #6b7280; /* cinza */
+}
+
+.sem-box {
+  max-width: 300px;
+}
+
+.sem-box h2 {
+  font-size: 2.5rem;
+  color: #1d4ed8; /* azul forte */
+  margin-bottom: 1rem;
+}
+
+.sem-box p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.sem-box button {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sem-box button:hover {
+  background-color: #2563eb;
 }
 
