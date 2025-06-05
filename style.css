@@ -711,7 +711,8 @@ nav .menu-links li a:hover {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 60px;
+      gap: 20rem;
+      height: 70vh;
     }
 
     .stats-column {
