@@ -705,3 +705,16 @@ nav .menu-links li a:hover {
   }
 }
 
+/* sessão parte 4 */
+
+.icones-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20rem; /* Espaçamento entre os ícones */
+  padding: 2rem 1rem; /* Espaçamento interno */
+  background-color: white; /* Fundo da seção */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
