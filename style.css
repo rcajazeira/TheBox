@@ -625,6 +625,10 @@ nav .menu-links li a:hover {
 .Services {
   background-color: #f8f5f5;
   padding-top: 1rem;
+
+  & .material-symbols-outlined {
+    font-size: 2.3rem;
+  }
 }
 
 .Services .services-title {
@@ -641,6 +645,8 @@ nav .menu-links li a:hover {
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
+  
+  
 }
 
 .Services .service-item-white,
@@ -659,6 +665,8 @@ nav .menu-links li a:hover {
   background-color: #458dda;
   border: 50px solid #458dda;
 }
+
+
 
 /* --- Media Query para telas menores (ex: até 768px) --- */
 @media (max-width: 768px) {
