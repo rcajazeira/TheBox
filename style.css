@@ -707,79 +707,102 @@ nav .menu-links li a:hover {
 
 /* sessão parte 4 */
 
-.sessao-quatro {
-  padding: 4rem 2rem;
-  background-color: white;
-}
+ .experience-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px;
+    }
 
-.icones-box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 5rem;
-  flex-wrap: wrap;
-}
+    .stats-column {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
 
-.icone-com-box {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+    .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: white;
+      padding: 20px 30px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      min-width: 260px;
+    }
 
-.quadro {
-  background: #fff;
-  padding: 1.5rem;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  width: 250px;
-}
+    .stat-icon {
+      font-size: 36px;
+    }
 
-.quadro span.material-symbols-outlined {
-  font-size: 40px;
-  color: #f59e0b; /* cor laranja suave */
-}
+    .stat-content {
+      display: flex;
+      flex-direction: column;
+    }
 
-.quadro h2 {
-  font-size: 2.5rem;
-  margin: 0.5rem 0;
-  color: #1e293b; /* azul escuro */
-}
+    .stat-number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2c2c2c;
+    }
 
-.quadro p {
-  margin: 0;
-  font-size: 1rem;
-  color: #6b7280; /* cinza */
-}
+    .stat-label {
+      color: #888;
+      font-size: 14px;
+    }
 
-.sem-box {
-  max-width: 300px;
-}
+    .line {
+      position: absolute;
+      top: 36px;
+      left: 24px;
+      width: 2px;
+      height: calc(100% - 36px);
+      background-color: #ccc;
+      z-index: -1;
+    }
 
-.sem-box h2 {
-  font-size: 2.5rem;
-  color: #1d4ed8; /* azul forte */
-  margin-bottom: 1rem;
-}
+    .right-panel {
+      max-width: 320px;
+    }
 
-.sem-box p {
-  color: #4b5563;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
+    .experience-title {
+      font-size: 36px;
+      color: #1f3bb3;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
 
-.sem-box button {
-  background-color: #1d4ed8;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    .experience-text {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 24px;
+    }
 
-.sem-box button:hover {
-  background-color: #2563eb;
-}
+    .contact-button {
+      padding: 12px 24px;
+      background-color: #1f3bb3;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .experience-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .right-panel {
+        text-align: center;
+      }
+
+      .line {
+        display: none;
+      }
+    }
 
