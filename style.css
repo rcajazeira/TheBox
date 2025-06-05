@@ -707,12 +707,20 @@ nav .menu-links li a:hover {
 
 /* sessão parte 4 */
 
+.sessao-quatro {
+  
+}
+
+
  .experience-section {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       gap: 20rem;
       height: 70vh;
+      background-color: white;
+     
+     
     }
 
     .stats-column {
@@ -720,6 +728,7 @@ nav .menu-links li a:hover {
       display: flex;
       flex-direction: column;
       gap: 40px;
+      
     }
 
     .stat-card {
