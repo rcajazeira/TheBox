@@ -717,8 +717,9 @@ nav .menu-links li a:hover {
       justify-content: center;
       align-items: flex-start;
       gap: 20rem;
-      height: 70vh;
+      height: 83.5vh;
       background-color: white;
+      
      
      
     }
@@ -728,6 +729,9 @@ nav .menu-links li a:hover {
       display: flex;
       flex-direction: column;
       gap: 40px;
+      margin-top: 4rem;
+     
+      
       
     }
 
@@ -774,6 +778,8 @@ nav .menu-links li a:hover {
 
     .right-panel {
       max-width: 320px;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
     }
 
     .experience-title {
