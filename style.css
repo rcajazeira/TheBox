@@ -979,6 +979,8 @@ nav .menu-links li a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
+   
+    
 }
 
 /* Sidebar de filtros */
@@ -986,6 +988,7 @@ nav .menu-links li a:hover {
     width: 200px;
     float: left;
     margin-right: 50px;
+    
 }
 
 .filters h2 {
@@ -1001,12 +1004,14 @@ nav .menu-links li a:hover {
     margin-bottom: 10px;
     transition: all 0.3s ease;
     cursor: pointer;
+    color: #979090;
 }
 
 .filters li.active {
-    color: #000;
+    color: #1e1bce;
     border-left: 3px solid #003366;
     padding-left: 10px;
+    font-weight: bold;
 }
 
 .filters li:hover {
@@ -1027,6 +1032,7 @@ nav .menu-links li a:hover {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
+    
 }
 
 /* Limpa a margem direita a cada dois cards */
@@ -1044,7 +1050,7 @@ nav .menu-links li a:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(7, 57, 164, 0.7);
     padding: 15px;
     color: white;
 }
@@ -1156,3 +1162,197 @@ nav .menu-links li a:hover {
     }
 }
 
+/* Sessão 7 */
+
+.contact-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    /* background-color: #fff; */ 
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select {
+    width: calc(50% - 8px); /* Adjust for spacing */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.required-indicator {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+}
+
+.asterisk {
+    color: red;
+}
+
+.submit-button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #004a9e;
+}
+
+/* ===== MEDIA QUERIES RESPONSIVAS ===== */
+
+@media (max-width: 768px) {
+    .contact-section {
+        margin: 30px 20px;
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%; /* Faz os campos ocuparem 100% da largura em telas menores */
+    }
+}
+
+/* footer do site */
+
+/* Footer Styles */
+.footer {
+    background-color: white;
+    padding: 20px 0;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha em telas menores */
+}
+
+.footer-left,
+.footer-right {
+    width: 50%;
+    padding: 10px;
+}
+
+.footer-left p,
+.footer-right p {
+    margin-bottom: 10px;
+}
+
+.footer-left strong,
+.footer-right strong {
+    color: #0056b3; /* Cor azul para os rótulos */
+}
+
+.footer-logo {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Permite que o botão caia abaixo do input em telas pequenas */
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.subscribe-button {
+    background-color: #ff9900; /* Laranja para o botão de inscrição */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-bottom {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* ===== MEDIA QUERIES RESPONSIVAS ===== */
+
+@media (max-width: 768px) {
+    .footer-left,
+    .footer-right {
+        width: 100%; /* Coloca as colunas uma embaixo da outra */
+    }
+
+    .newsletter-form input {
+        min-width: 100%;
+    }
+
+    .subscribe-button {
+        width: 100%;
+    }
+}
